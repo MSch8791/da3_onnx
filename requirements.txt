@@ -1,0 +1,3 @@
+torch>=2
+onnx>=1.20
+depth-anything-3
