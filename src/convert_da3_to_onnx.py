@@ -32,7 +32,8 @@ class DepthAnything3Wrapper(torch.nn.Module):
         model_in = image
 
         with torch.no_grad():
-            with torch.autocast(device_type=model_in.device.type, dtype=torch.float16):
+            dtype = torch.float32 if model_in.device.type == "cpu" else torch.float16
+            with torch.autocast(device_type=model_in.device.type, dtype=dtype):
                 # we use the internal model object
                 output = self._model.model(
                     model_in,
