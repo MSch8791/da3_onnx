@@ -40,12 +40,11 @@ class DepthAnything3Wrapper(torch.nn.Module):
                     intrinsics=None,
                     export_feat_layers=[],
                     infer_gs=False,
-                    use_ray_pose=True
+                    use_ray_pose=False
                 )
         
         depth = output["depth"]
-        ray = output["ray"]
-        return depth, ray
+        return depth
     
 def getArguments():
     parser = argparse.ArgumentParser(description='Replay tool for performance testing')

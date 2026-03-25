@@ -1,3 +1,4 @@
 torch>=2
 onnx>=1.20
+onnxscript
 depth-anything-3
